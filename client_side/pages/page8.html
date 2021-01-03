@@ -1,0 +1,27 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+     <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="client_side/static/css/page8.css">
+</head>
+<body>
+
+
+
+<div class="up"></div>
+<div class="down"></div>
+<div class="center">
+<h1 style="text-align: center;font-size:30px; top:300px; " >המטרד בטיפולך {{name}} </h1>
+<h1 style="text-align: center;font-size:30px;" > עליך להעלות תמונה של הטיפול</h1>
+
+    <form action="http://localhost:8888/page9" method="POST">
+        <label for="pic"><input type="file" name="pic" id="pic" accept="image/*,.pdf" required>העלה תמונה</label>
+        <label for="apply"><button name="apply" id="apply">    הגש     </button></label>
+        <input type="hidden" id="id" name="id" value={{id}}>
+    </form>
+</div>
+
+
+</body>
+</html>

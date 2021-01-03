@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="client_side/static/css/map.css">
+  <script src="https://npmcdn.com/react@0.14.2/dist/react.min.js"></script>
+  <script src="https://npmcdn.com/react-dom@0.14.2/dist/react-dom.min.js"></script>
+  <script src="https://npmcdn.com/google-map-react@1.0.1/dist/GoogleMapReact.js"></script>
+</head>
+
+
+
+<script>
+      function myMap()
+        {
+        //init map
+          var bound = new google.maps.LatLngBounds(new google.maps.LatLng(32.035249, 34.743347), new google.maps.LatLng(32.140813, 34.812964));
+          var maprestriction= {strictBounds: true, latLngBounds: bound };
+          var myLatlng = new google.maps.LatLng(32.070340, 34.775972);
+          var mapProp= {center:myLatlng, zoom:15, restriction: maprestriction};
+          var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
+
+          //init marker for new alert
+          var marker = new google.maps.Marker({position: {lat: 32.074405, lng: 34.779795}, map: map});
+          google.maps.event.addListener(map, 'click', function(event){placeMarker(event.latLng);});
+
+          //init for exists markers
+          var icon1 = "https://img.icons8.com/doodle/48/000000/open-sign--v1.png";
+          var icon3  = "https://img.icons8.com/metro/40/000000/road-worker.png"
+          var icon4 = "https://img.icons8.com/plasticine/50/000000/in-progress.png"
+          var icon5 = "https://img.icons8.com/color/48/000000/close-sign.png"
+          var idIcon = "https://img.icons8.com/doodle/40/000000/finish-flag.png";
+
+          var ids={{ids}}
+          var open={{open}}
+          var takecare={{takecare}}
+          var check={{check}}
+          var wait={{wait}}
+
+
+
+          var infowindow = new google.maps.InfoWindow();
+
+
+              for(var t=0; t<ids.length ; t=t+2)
+              {
+
+                var temp1= parseFloat(ids[t]);
+                var temp2=parseFloat(ids[t+1]);
+                var beachMarker = new google.maps.Marker({position: {lat: temp1, lng: temp2}, map: map, icon: idIcon});
+                bindInfoWindow(beachMarker, map, infowindow, temp1,temp2);
+               }
+
+             for(var t=0; t<open.length ; t=t+2)
+              {
+                var temp1= parseFloat(open[t]);
+                var temp2=parseFloat(open[t+1]);
+                var beachMarker = new google.maps.Marker({position: {lat: temp1, lng: temp2}, map: map, icon: icon1});
+                bindInfoWindow(beachMarker, map, infowindow, temp1,temp2);
+               }
+
+               for(var t=0; t<takecare.length ; t=t+2)
+              {
+                var temp1= parseFloat(takecare[t]);
+                var temp2=parseFloat(takecare[t+1]);
+                var beachMarker = new google.maps.Marker({position: {lat: temp1, lng: temp2}, map: map, icon: icon3});
+                bindInfoWindow(beachMarker, map, infowindow, temp1,temp2);
+               }
+
+              for(var t=0; t<check.length ; t=t+2)
+              {
+                var temp1= parseFloat(check[t]);
+                var temp2=parseFloat(check[t+1]);
+                var beachMarker = new google.maps.Marker({position: {lat: temp1, lng: temp2}, map: map, icon: icon4});
+                bindInfoWindow(beachMarker, map, infowindow, temp1,temp2);
+               }
+
+               for(var t=0; t<wait.length ; t=t+2)
+              {
+                var temp1= parseFloat(wait[t]);
+                var temp2=parseFloat(wait[t+1]);
+                var beachMarker = new google.maps.Marker({position: {lat: temp1, lng: temp2}, map: map, icon: icon5});
+                bindInfoWindow(beachMarker, map, infowindow, temp1,temp2);
+               }
+
+                function bindInfoWindow(marker, map, infowindow,temp1,temp2)
+                 {
+                  var content = '<form action="http://localhost:8888/existAlert" method="POST"><div><input type="hidden" name="lng" id="lng" value='+temp2+'></div><div><input type="hidden" name="lat" id="lat" value='+temp1+'></div><div><button class="bu">צפייה בהתראה</button></div></form>'
+                  marker.addListener('click', function() {
+                  infowindow.setContent(content);
+                  infowindow.open(map, this);});
+                 }
+
+
+          function placeMarker(location)
+          {
+          	var latitude = location.lat();
+            var longitude = location.lng();
+          	marker.setPosition(location);
+            var infowindow = new google.maps.InfoWindow();
+            var contentString = '<form action="http://localhost:8888/checkAround" method="POST"><div><input type="hidden" name="lng" id="lng" value='+longitude+'></div><div><input type="hidden" name="lat" id="lat" value='+latitude+'></div><div><button class="bu">דווח על מפגע</button></div></form>'
+            infowindow.setContent(contentString);
+            infowindow.open(map, marker);
+          }
+      }
+  </script>
+
+<body>
+<div class="box">
+  <div id="googleMap" style="width:100%;height:550px;">
+</div>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCdXVDE6m6g0JG4b0szv8ps33qT8E15m8s&callback=myMap"></script>
+
+</body>
+</html>
+

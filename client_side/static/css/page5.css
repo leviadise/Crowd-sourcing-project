@@ -1,0 +1,62 @@
+
+body{
+background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Tel-Aviv_Port_%28long-exposure_HDR%29.jpg/1280px-Tel-Aviv_Port_%28long-exposure_HDR%29.jpg');
+background-size: cover;
+color: white;
+}
+
+.online{
+
+  cursor:pointer;
+  height:  38px;
+  line-height:  40px;
+  border:  2px solid white;
+  text-align:  center;
+  width:  120px;
+  color:  #fff;
+  display: block; margin: auto auto
+  }
+
+
+
+.up {
+  width: 50%;
+  height: 2px;
+  background: white;
+  position: relative;
+  -webkit-animation: mymove 3s;  /* Safari 4.0 - 8.0 */
+  -webkit-animation-fill-mode: forwards; /* Safari 4.0 - 8.0 */
+  animation: mymoveup 3s;
+  animation-fill-mode: forwards;
+  position: center;
+    left: 25%
+}
+
+.down{
+  width: 50%;
+  height: 2px;
+  background: white;
+  position: relative;
+  -webkit-animation: mymove 3s;  /* Safari 4.0 - 8.0 */
+  -webkit-animation-fill-mode: forwards; /* Safari 4.0 - 8.0 */
+  animation: mymovedown 3s;
+  animation-fill-mode: forwards;
+    left: 25%
+}
+
+@keyframes mymovedown {
+  from {top: 200px;}
+  to {top: 400px ;}
+}
+@keyframes mymoveup {
+  from {top: 200px;}
+  to {top: 100px; }
+}
+
+.center {
+  margin: auto;
+  width: 60%;
+  padding: 150px;
+    vertical-align: middle;
+
+}

@@ -1,0 +1,24 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="client_side/static/css/exist.css">
+
+    </head>
+    <body>
+        <div class="widget center">
+
+            <div class="blur"></div>
+
+            <form action="http://localhost:8888/page3" method="POST" style="width: 50%; position: fixed; top: 30%;left: 25%;">
+
+                <label for="textextra"> אם ברצונך להוסיף מלל או תמונה, עשה זאת כאן </label>
+                <textarea id="subject" name="subject" placeholder="רשום משהו..." style="height:200px"></textarea>
+                <input id="pic" type="file" style="left:15px;" name="pic" accept="image/*">
+                <input name="id" type="hidden" value={{id}}>
+                <input type="submit" value="הגש">
+            </form>
+        </div>
+
+    </body>
+</html>

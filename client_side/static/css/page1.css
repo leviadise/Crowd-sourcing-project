@@ -1,0 +1,179 @@
+  .navbar {
+  margin-bottom: 0;
+  border-radius: 0;
+  /* background-color; stay gray or change to dark gray */
+  color: #474747; /* text color */
+  padding: 1% 0;
+  font-size: 1.2em;  /* This increases text font */
+  border: 0; /* the black thing */
+  }
+
+  .navbar-brand {
+  float: left;
+  min-height: 55px;
+  padding: 0 15px 5px;
+  }
+  .navbar-inverse .navbar-nav .active a, .navbar-inverse .navbar-nav .active a:focus, .navbar-inverse .navbar-nav .active a:hover {
+color: #FFF;
+background-color: #222222; /* for the black thing in home */ /* #232323 try to change later on if it does not match with anything else */
+}
+.navbar-inverse .navbar-nav li a {
+color: #D5D5D5; /* text color?? */
+  }
+
+  .carousel-caption { /* this moves the text in the sliders up */
+  top: 50%;
+  transform: translateY(-50%);
+  }
+
+  .btn { /* get started button */
+  font-size: 18px;
+  color: #FFF;
+  padding: 12px 22px;
+  background: #000000;
+  border: 2px solid #FFF;
+  }
+
+  .container {
+   margin-top: 30px;
+   margin-bottom: 26px;
+  }
+
+  #icon {
+  max-width: 200px; /* to change the size of 3 images */
+  margin: 1% auto;
+  margin-top: 30px;
+  margin-bottom: 26px;
+  }
+
+
+
+  footer { /* to design footer (no text) */
+  width: 100%;
+  background-color: #222222;
+  padding: 5%;
+  color: #FFF; /* text color */
+  }
+  .fa {
+padding: 15px; /* social media pics size */
+font-size: 25px;
+color: #FFF;
+  }
+
+  .fa:hover {
+  color: #D5D5D5;
+  }
+
+  @media (max-width: 900px) {
+.fa {
+font-size: 20px;
+padding: 10px;
+}
+  }
+  @media (max-width: 600px) {  /* this is to not show the getting started buttons and header on mobile */
+  .carousel-caption {
+display: none;
+}
+
+#icon {
+max-width: 150px;
+}
+
+h2 { /* h4 size in mobile */
+font-size: 1.7em;
+}
+  }
+  .container1 {    margin: 4% auto;
+}
+
+<!-- login page -->
+body{
+margin: 0;
+padding: 0;
+background: url(https://www.common-ground.org.il/wp-content/uploads/2017/02/%D7%9C%D7%95%D7%92%D7%95-%D7%AA%D7%9C-%D7%90%D7%91%D7%99%D7%91-%D7%99%D7%A4%D7%95.png);
+background-size: cover;
+background-position:center;
+font-family: sans-serif;
+
+}
+
+.login-box{
+width: 320px;
+height: 420px;
+background: rgba(0, 0, 0, 0.5);
+color: #fff;
+top: 50%;
+left:50%;
+position:absolute;
+transform: translate(-50%, -50%);
+box-sizing: border-box;
+padding: 70px 30px;
+}
+
+.avatar{
+width: 100px;
+height: 100px;
+border-radius: 50%;
+position: absolute;
+top: -50px;
+left: calc(50% - 50 px);
+}
+
+h1{
+margin: 0;
+padding: 0 0 20px;
+text-align: center;
+font-size: 22px;
+}
+
+.login-box p{
+margin: 0;
+padding: 0;
+font-weight: bold;
+}
+
+.login-box input{
+width: 100%;
+margin-bottom: 20px;
+}
+
+.login-box input[type="text"], input[type="password"]
+{
+border: none;
+border-bottom: 1 px solid #fff;
+background: transparent;
+outline: none;
+height: 40px;
+color: #fff;
+font-size: 16px;
+}
+
+.login-box input[type="submit"]
+{
+border: none;
+outline: none;
+height: 40px;
+background: #1c8adb;
+color: #fff;
+font-size: 18px;
+border-radius: 20px;
+}
+
+.login-box input[type="submit"]:hover
+{
+cursor: pointer;
+background: #39dc79;
+color: #000;
+}
+
+.login-box a{
+text-decoration: none;
+font-size: 14px;
+color: #fff;
+}
+
+.login-box a:hover
+{
+color: #39dc79;
+}
+

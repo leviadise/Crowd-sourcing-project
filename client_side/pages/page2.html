@@ -1,0 +1,34 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+  <link rel="stylesheet" type="text/css" href="client_side/static/css/page2.css">
+</head>
+  <body>
+    <div class="widget center">
+  
+      <div class="blur"></div>
+      <form action="http://localhost:8888/page2" method="POST" style="  width: 50%; position: fixed; top: 30%;left: 25%;">
+        <input type="hidden" id="lng" name="lng" value={{lng}}>
+        <input type="hidden" id="lat" name="lat" value={{lat}}>
+        <label for="report">רשום את המפגע או בחר מן הרשימה</label>
+        <input type="text" id="name" name="name" list="report" />
+        <datalist id="report">
+          <option> חיה זקוקה לעזרה</option>
+          <option>נפילת מתח חשמל</option>
+          <option>חרקים</option>
+          <option>זבל</option>
+          <option>כביש</option>
+          <option>ביוב</option>
+          <option>רכב</option>
+      </datalist>
+
+        <label for="textextra">הוסף מלל </label>
+        <textarea id="subject" name="subject" placeholder="רשום משהו..." style="height:200px"></textarea>
+        <input type="file" style="left:15px;" name="pic" accept="image/*">
+        <input type="submit" value="הגש">
+    </form>
+  </div>
+
+</body>
+</html>

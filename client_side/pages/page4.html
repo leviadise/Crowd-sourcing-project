@@ -1,0 +1,34 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="client_side/static/css/page4.css">
+  </head>
+  <body>
+
+    <div class="bg-image"></div>
+
+    <div class="bg-text">
+      <h2 style="font-size:50px">אנא הגש טופס זה רק אם המטרד לא טופל או שאינו טופל כראוי</h2>
+      <form action="http://localhost:8888/map_start" >
+        <button >המטרד טופל, קח אותי למפה</button>
+      </form>
+      <p>שים לב! התושב שטיפל במטרד זה העלה תמונה  </p>
+      <img src = {{pic}} style=" height: 200px; widgh=200px;">
+      <p> ? האם זה אותו מטרד </p>
+
+      <form action="http://localhost:8888/page7_start" method="POST">
+        <input type="hidden" id="id" name="id" value={{id}}>
+        <button style="width: 45%;" >כן, זהו אותו מטרד</button>
+      </form>
+      <form action="http://localhost:8888/methoddd" method="POST">
+        <input type="hidden" id="lng" name="lng" value={{lng}}>
+        <input type="hidden" id="lat" name="lat" value={{lat}}>
+        <button style="width: 45%;" >לא, אני רוצה להתריע על מטרד חדש</button>
+      </form>
+
+    </div>
+
+  </body>
+</html>
